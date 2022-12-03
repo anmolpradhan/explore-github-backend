@@ -1,9 +1,8 @@
-const express = require('express');
-const controllers=require('./controllers');
+import express from 'express'
+import { getUser,getRepos, getRepo } from './controllers.js';
 
 const router = express.Router();
 
-router.get('/user/:user', controllers.getUser);
-router.get('/repository/:query'.controllers.getRepos);
-
-module.exports = router;
+router.get('/repositories/:query',getRepos);
+router.get('/repository/:user/:repos',getRepo)
+export default router
