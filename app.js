@@ -1,12 +1,13 @@
 import express from 'express';
 import cors from 'cors';
-import { setHeaders } from './middleware';
+import router from './route.js';
+
 const app=express();
-const PORT=8000;
+const PORT=8080;
 
 app.use(express.json());
 app.use(cors());
-app.use(setHeaders())
+app.use('/api',router)
 app.get('/',(req,res)=>{
     res.send("Welcome")
 })
