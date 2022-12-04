@@ -9,7 +9,8 @@ Runs the app in development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
 ### API Endpoints
-List of available routes
+List of available routes:
+
 `/api/user/:user` - Get details of github users according to `:user` username
 
 `/api/repository/:query` - Get all github repository matching `query`
