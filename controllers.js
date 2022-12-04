@@ -42,3 +42,18 @@ export const getRepo = async (req, res) => {
       res.status(500).send(err)
     });
 };
+export const getReadMe = async (req, res) => {
+  const user = req.params.user;
+  const repo = req.params.repo;
+  const branch = req.params.branch;
+  const url = "https://raw.githubusercontent.com/" + user + "/" + repo + "/"+
+  branch + "/README.md";
+  await axios
+  .get(url)
+  .then((response) => {
+    res.send(response.data);
+  })
+  .catch((err) => {
+    res.status(500).send(err);
+  });
+};
