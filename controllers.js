@@ -1,6 +1,4 @@
 import axios from "axios";
-import url from "url"
-
 
 const apiUrl="https://api.github.com";
 export const getUser = async (req, res) => {
